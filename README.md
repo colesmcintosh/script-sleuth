@@ -17,7 +17,7 @@ To get started with this project, follow these steps:
 
 1. Clone the repository to your local machine:
 ```bash
-git clone https://github.com/colesmcintosh/code-qa
+git clone https://github.com/colesmcintosh/script-sleuth
 ```
 
 2. Navigate to the project directory:
