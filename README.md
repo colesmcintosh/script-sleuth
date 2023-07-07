@@ -6,7 +6,7 @@ This project is a Python program that allows you to interactively explore your c
 
 ### Prerequisites
 
-Before you can run this script, you'll need to have the following installed on your machine:
+Before you can run this program, you'll need to have the following installed on your machine:
 
 - Python 3.8 or higher
 - pip (Python's package installer)
@@ -38,20 +38,20 @@ Replace `your_openai_api_key` with your actual OpenAI API key.
 
 ### Execution
 
-Once you've installed all prerequisites and set up your environment variables, you can run the script with the following command:
+Once you've installed all prerequisites and set up your environment variables, you can run the program with the following command:
 ```bash
 python main.py
 ```
 
 ## Usage
 
-When you run the script, it will first ask you to enter a directory. This should be the root directory of the codebase you want to explore. The script will then find all programming files in that directory and its subdirectories, presenting you with a list of these files.
+When you run the program, it will first ask you to enter a directory. This should be the root directory of the codebase you want to explore. The program will then find all programming files in that directory and its subdirectories, presenting you with a list of these files.
 
-Next, the script will ask you to enter the number of the file you're interested in. Once you've selected a file, you will be prompted to input a question about the selected file. The script will then use the GPT-4 model to generate an answer to your question and print it out.
+Next, the program will ask you to enter the number of the file you're interested in. Once you've selected a file, you will be prompted to input a question about the selected file. The program will then use the GPT-4 model to generate an answer to your question and print it out.
 
 ## Code Overview
 
-The script uses Python's `glob` and `os` modules to find all programming files in the specified directory and its subdirectories. The `dotenv` module is used to load environment variables, including your OpenAI API key, which is used to authenticate with the OpenAI API.
+The program uses Python's `glob` and `os` modules to find all programming files in the specified directory and its subdirectories. The `dotenv` module is used to load environment variables, including your OpenAI API key, which is used to authenticate with the OpenAI API.
 
 The `langchain` library is used for language model generation, specifically the `ChatOpenAI` class for interaction with the OpenAI API, and the `ChatPromptTemplate`, `SystemMessagePromptTemplate`, and `HumanMessagePromptTemplate` classes for prompt creation and formatting.
 
@@ -60,8 +60,8 @@ The `langchain` library is used for language model generation, specifically the 
 Script Sleuth comes packed with features that aid in interactive code exploration. Here's a rundown of what's currently available and what could potentially be added in the future.
 
 - [x] Directory-based code navigation: Easily traverse your codebase by inputting a directory path.
-- [x] Support for multiple programming languages: The script can process Python, HTML, CSS, Ruby, C, JavaScript, Markdown, and Text files.
-- [x] Interactive questioning: You can ask as many questions as you want about a selected file. The script continues to answer until you explicitly decide to exit or switch files.
+- [x] Support for multiple programming languages: The program can process Python, HTML, CSS, Ruby, C, JavaScript, Markdown, and Text files.
+- [x] Interactive questioning: You can ask as many questions as you want about a selected file. The program continues to answer until you explicitly decide to exit or switch files.
 - [x] Support for backtracking: You can choose a new file from the current directory or go back to choose a new directory without exiting the program.
 - [x] AI-powered code analysis: Utilizes the power of OpenAI's GPT-4 model to answer questions about your code.
 
@@ -79,4 +79,4 @@ Contributions are what make the open source community such an amazing place to l
 
 # Footnote
 
-This README was generated using the very script it describes - metaaaaa! 🤩
+This README was generated using the very program it describes - metaaaaa! 🤩
