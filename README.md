@@ -1,6 +1,6 @@
 # Script Sleuth 🕵️‍♂️
 
-This project is a Python script that allows you to interactively explore your codebase. It's designed to find all programming files in a specified directory and its subdirectories, and then uses OpenAI's GPT-4 model to answer any questions you have about a selected file.
+This project is a Python program that allows you to interactively explore your codebase. It's designed to find all programming files in a specified directory and its subdirectories, and then uses OpenAI's GPT-4 model to answer any questions you have about a selected file.
 
 ## Getting Started
 
