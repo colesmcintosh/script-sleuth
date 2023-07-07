@@ -55,14 +55,6 @@ The script uses Python's `glob` and `os` modules to find all programming files i
 
 The `langchain` library is used for language model generation, specifically the `ChatOpenAI` class for interaction with the OpenAI API, and the `ChatPromptTemplate`, `SystemMessagePromptTemplate`, and `HumanMessagePromptTemplate` classes for prompt creation and formatting.
 
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
 # Footnote
 
 This README was generated using the very script it describes - metaaaaa! 🤩
