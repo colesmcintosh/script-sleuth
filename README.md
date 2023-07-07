@@ -55,6 +55,28 @@ The script uses Python's `glob` and `os` modules to find all programming files i
 
 The `langchain` library is used for language model generation, specifically the `ChatOpenAI` class for interaction with the OpenAI API, and the `ChatPromptTemplate`, `SystemMessagePromptTemplate`, and `HumanMessagePromptTemplate` classes for prompt creation and formatting.
 
+## Features
+
+Script Sleuth comes packed with features that aid in interactive code exploration. Here's a rundown of what's currently available and what could potentially be added in the future.
+
+- [x] Directory-based code navigation: Easily traverse your codebase by inputting a directory path.
+- [x] Support for multiple programming languages: The script can process Python, HTML, CSS, Ruby, C, JavaScript, Markdown, and Text files.
+- [x] Interactive questioning: You can ask as many questions as you want about a selected file. The script continues to answer until you explicitly decide to exit or switch files.
+- [x] Support for backtracking: You can choose a new file from the current directory or go back to choose a new directory without exiting the program.
+- [x] AI-powered code analysis: Utilizes the power of OpenAI's GPT-4 model to answer questions about your code.
+
+Future Considerations:
+
+- [ ] File upload support: Instead of inputting a directory, users could directly upload the file they want to analyze.
+- [ ] User Interface: A simple GUI could improve the user experience, making navigation and interaction even more seamless.
+- [ ] Extended language support: Include additional languages to expand the tool's usefulness for a wider array of developers.
+- [ ] Integration with code editors: Imagine if this tool could be used directly in your favorite code editor! An extension or plugin could be a future development direction.
+
+As always, Script Sleuth remains a tool for developers, by developers. If you have any suggestions or would like to contribute, don't hesitate to reach out or make a pull request!
+
+# Contributing
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
 # Footnote
 
 This README was generated using the very script it describes - metaaaaa! 🤩
