@@ -71,6 +71,8 @@ Future Considerations:
 - [ ] User Interface: A simple GUI could improve the user experience, making navigation and interaction even more seamless.
 - [ ] Extended language support: Include additional languages to expand the tool's usefulness for a wider array of developers.
 - [ ] Integration with code editors: Imagine if this tool could be used directly in your favorite code editor! An extension or plugin could be a future development direction.
+- [ ] Future Support for additional programming languages: CPP, Go, Java, Proto, RST, Rust, Scala, Swift, LaTeX,and Solidity
+- [ ] Vector store retrieval to handle larger code bases
 
 As always, Script Sleuth remains a tool for developers, by developers. If you have any suggestions or would like to contribute, don't hesitate to reach out or make a pull request!
 
