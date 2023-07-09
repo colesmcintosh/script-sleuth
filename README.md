@@ -60,19 +60,24 @@ The `langchain` library is used for language model generation, specifically the 
 Script Sleuth comes packed with features that aid in interactive code exploration. Here's a rundown of what's currently available and what could potentially be added in the future.
 
 - [x] Directory-based code navigation: Easily traverse your codebase by inputting a directory path.
-- [x] Support for multiple programming languages: The program can process Python, HTML, CSS, Ruby, C, JavaScript, Markdown, and Text files.
+- [x] Support for multiple programming languages: The program can process Python, HTML, CSS, Ruby, C, JavaScript, Markdown, CPP, Go, Java, Proto, RST, Rust, Scala, Swift, LaTeX, and Solidity.
 - [x] Interactive questioning: You can ask as many questions as you want about a selected file. The program continues to answer until you explicitly decide to exit or switch files.
 - [x] Support for backtracking: You can choose a new file from the current directory or go back to choose a new directory without exiting the program.
 - [x] AI-powered code analysis: Utilizes the power of OpenAI's GPT-4 model to answer questions about your code.
+- [x] HuggingFace model support 🤗: You can use any model from the HuggingFace model hub to answer questions about your code.
 
 Future Considerations:
 
 - [ ] File upload support: Instead of inputting a directory, users could directly upload the file they want to analyze.
 - [ ] User Interface: A simple GUI could improve the user experience, making navigation and interaction even more seamless.
-- [ ] Extended language support: Include additional languages to expand the tool's usefulness for a wider array of developers.
 - [ ] Integration with code editors: Imagine if this tool could be used directly in your favorite code editor! An extension or plugin could be a future development direction.
-- [ ] Future Support for additional programming languages: CPP, Go, Java, Proto, RST, Rust, Scala, Swift, LaTeX,and Solidity
 - [ ] Vector store retrieval to handle larger code bases
+
+<br/>
+
+> Did some testing implementing a vector store but don't really see the necessity for it. If you think it's necessary, feel free to implement it and make a pull request!
+
+<br/>
 
 As always, Script Sleuth remains a tool for developers, by developers. If you have any suggestions or would like to contribute, don't hesitate to reach out or make a pull request!
 
