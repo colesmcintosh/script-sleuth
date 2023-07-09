@@ -1,27 +1,54 @@
-import unittest
-from unittest.mock import patch
+from langchain.prompts import PromptTemplate
 import main
 
-class TestYourScript(unittest.TestCase):
-    @patch('builtins.input')
-    def test_fetch_code_file_exit(self, input_mock):
-        input_mock.return_value = 'exit'
-        result = main.fetch_code_file('exit')
-        self.assertEqual(result, (None, None, None, None))
+def test_fetch_code_file_exit(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: 'exit')
+    assert main.fetch_code_file() == (None, None, None, None)
 
-    @patch('main.format_prompt', return_value=('fake_prompt', 'fake_question'))
-    @patch('builtins.input', return_value='1')
-    def test_fetch_code_file_select_first(self, format_prompt_mock, input_mock):
-        result = main.fetch_code_file('test_dir')
-        self.assertEqual(result[1].split('/')[-1], 'hello_world.cpp')
-        self.assertEqual(result[3], 'C++')
+def test_fetch_code_file_select_first(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: '1')
+    monkeypatch.setattr('main.glob.glob', lambda _ , **__: ['test_dir/hello_world.cpp'])
+    result = main.fetch_code_file('test_dir')
+    assert result[1].split('/')[-1] == 'hello_world.cpp'
+    assert result[3] == 'C++'
 
-    @patch('builtins.input', return_value='What does this function do?')
-    def test_format_prompt(self, input_mock):
-        selected_file = 'test.py'
-        result_prompt, result_question = main.format_prompt(selected_file)
-        self.assertEqual(result_question, 'What does this function do?')
-        self.assertIsInstance(result_prompt, main.PromptTemplate)
+def test_format_prompt(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: 'What does this function do?')
+    result_prompt, result_question = main.format_prompt('test.py')
+    assert result_question == 'What does this function do?'
+    assert isinstance(result_prompt, PromptTemplate)
 
-if __name__ == '__main__':
-    unittest.main()
+def test_get_llm_openai(monkeypatch):
+    mock_model = "mock_model"
+    monkeypatch.setattr('main.ChatOpenAI', lambda *args, **kwargs: mock_model)
+    assert main.get_llm("openai") == mock_model
+
+def test_get_llm_huggingface_hub(monkeypatch):
+    mock_model = "mock_model"
+    monkeypatch.setattr('main.HuggingFaceHub', lambda *args, **kwargs: mock_model)
+    assert main.get_llm("huggingface") == mock_model
+
+def test_get_llm_huggingface_pipeline(monkeypatch):
+    mock_model = "mock_model"
+    monkeypatch.setattr('main.HuggingFacePipeline.from_model_id', lambda *args, **kwargs: mock_model)
+    assert main.get_llm("huggingface", local_model=True) == mock_model
+
+def test_main_exit(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda *args: 'exit')
+    assert main.main() is None
+
+def test_format_prompt_back(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: 'back')
+    result_prompt, result_question = main.format_prompt('test.py')
+    assert result_question == 'back'
+
+def test_main_quit(monkeypatch):
+    inputs = iter(['test_dir', '1', 'quit'])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    assert main.main() is None
+
+def test_main_back(monkeypatch):
+    inputs = iter(['test_dir', '1', 'back', 'exit'])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    assert main.main() is None
+

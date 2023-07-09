@@ -1,5 +1,12 @@
 # Script Sleuth 🕵️‍♂️
 
+[![Coverage Status](https://coveralls.io/repos/github/colesmcintosh/script-sleuth/badge.svg)](https://coveralls.io/github/colesmcintosh/script-sleuth)
+![Python version](https://img.shields.io/badge/python-3.11-blue.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/colesmcintosh/script-sleuth)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/colesmcintosh/script-sleuth)](https://github.com/colesmcintosh/script-sleuth/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/colesmcintosh/script-sleuth)](https://github.com/colesmcintosh/script-sleuth/issues)
+
+
 This project is a Python program that allows you to interactively explore your codebase. It's designed to find all programming files in a specified directory and its subdirectories, and then uses OpenAI's GPT-4 model to answer any questions you have about a selected file.
 
 ## Getting Started
@@ -83,6 +90,9 @@ As always, Script Sleuth remains a tool for developers, by developers. If you ha
 
 # Contributing
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+# License
+Distributed under the MIT License. See `LICENSE` for more information.
 
 # Footnote
 
