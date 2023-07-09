@@ -1,6 +1,6 @@
 """
 This script interacts with the user to provide explanations for
-selected code files. It uses the OpenAI model "gpt-4" for generating the explanations.
+selected code files. It uses a model for generating the explanations.
 """
 
 import os
@@ -11,24 +11,20 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
-TEST_DIR = "/Users/colemcintosh/Projects/code-qa/"
-
-TESTING = True
-
 # Load the environment variables
 load_dotenv()
 
-def fetch_code_file():
+def fetch_code_file(dir_to_use = None):
     """
     Function to fetch programming files based on the provided directory
     and chosen file number
     """
     while True:
         # Ask the user for the directory
-        root_dir = input("Enter the directory (or 'exit' to quit): ") if not TESTING else TEST_DIR
+        root_dir = input("Enter the directory (or 'exit' to quit): ") if not dir_to_use else dir_to_use
 
         if root_dir.lower() == 'exit':
-            return None, None, None
+            return None, None, None, None
 
         # Find all programming files in the directory and subdirectories
         lang_exts = {
