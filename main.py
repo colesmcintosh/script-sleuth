@@ -72,7 +72,7 @@ def fetch_code_file():
         with open(selected_file, 'r') as file:
             file_contents = file.read()
 
-        return root_dir, selected_file, file_contents, lang_exts
+        return root_dir, selected_file, file_contents, lang_exts["." + selected_file.split(".")[-1]]
 
 
 def format_prompt(selected_file):
@@ -106,7 +106,7 @@ def main():
     Main function to orchestrate the operations
     """
     while True:
-        root_dir, selected_file, file_contents, lang_exts = fetch_code_file()
+        root_dir, selected_file, file_contents, lang_used = fetch_code_file()
 
         if root_dir is None:
             break
@@ -126,7 +126,7 @@ def main():
             # get a chat completion from the formatted messages
             chain = LLMChain(llm=llm, prompt=prompt_formatted)
 
-            result = chain.predict(language_used=lang_exts["." + selected_file.split(".")[-1]], code_base=file_contents, question=question)
+            result = chain.predict(language_used=lang_used, code_base=file_contents, question=question)
 
             print("------------ RESULT ------------")
             print(result)
